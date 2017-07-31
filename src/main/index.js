@@ -20,15 +20,26 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
-    useContentSize: true,
-    width: 1000
+    show: false,
+    backgroundColor: '#2e2c29',
+    height: 500,
+    width: 300,
+    center: true,
+    resizable: false,
+    fullscreenable: false,
+    kiosk: true,
+    title: 'Haul',
+    titleBarStyle: 'hidden'
   })
 
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
   })
 }
 
@@ -41,9 +52,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  if (mainWindow === null) {
-    createWindow()
-  }
+  !mainWindow && createWindow()
 })
 
 /**
