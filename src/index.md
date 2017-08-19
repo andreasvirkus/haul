@@ -4,6 +4,6 @@ layout: default.hbs
 menu-order: 1
 ---
 
-# Homepage
+## A light desktop app for serving static sites & files!
 
-Look around the site or explore the [code](https://github.com/andreasvirkus/metalsmith-boilerplate)
+See the [repo](https://github.com/andreasvirkus/haul) for more details or hop straight to [downloading](https://github.com/andreasvirkus/haul/releases)!
